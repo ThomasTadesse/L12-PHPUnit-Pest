@@ -2,8 +2,10 @@
 
 use App\Models\Product;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
-uses(Tests\TestCase::class, RefreshDatabase::class);
+uses(RefreshDatabase::class);
+beforeEach(fn () => new TestCase);
 
 test('een product kan worden aangemaakt', function () {
     $product = Product::create([
